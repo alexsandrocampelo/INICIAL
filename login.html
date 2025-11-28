@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acesso Restrito</title>
+<style>
+    body { font-family: Arial; background: linear-gradient(135deg,#00397B,#0059B2); height:100vh; margin:0; display:flex; flex-direction:column; justify-content:center; align-items:center; }
+    .login-box { background:white; width:330px; padding:30px; border-radius:15px; box-shadow:0 0 20px rgba(0,0,0,0.4); text-align:center; }
+    h2 { margin-bottom:15px; color:#00397B; }
+    input { width:100%; padding:12px; margin-top:10px; border:1px solid #aaa; border-radius:8px; font-size:15px; }
+    button { width:100%; padding:12px; margin-top:20px; background:#00397B; border:none; border-radius:8px; color:white; font-size:16px; cursor:pointer; font-weight:bold; transition:0.3s; }
+    button:hover { background:#0059B2; }
+    .error { margin-top:15px; color:red; font-weight:bold; display:none; }
+    .header-box { text-align:center; margin-bottom:25px; color:white; }
+    .header-box h1 { margin:5px 0; font-size:28px; font-weight:700; }
+    .header-box p { margin:0; font-size:18px; }
+</style>
+</head>
+<body>
+
+<div class="header-box">
+    <h1>Relatório CEAD – Setor 11</h1>
+    <p>Pr. Presidente: Pr. Ailton José Alves</p>
+    <p>Pr. Setorial: Pr. Sergio Correrea</p>
+</div>
+
+<div class="login-box">
+    <h2>Área Restrita</h2>
+    <input type="text" id="usuario" placeholder="Usuário">
+    <input type="password" id="senha" placeholder="Senha">
+    <button onclick="logar()">Entrar</button>
+    <div class="error" id="erro">Usuário ou senha incorretos!</div>
+</div>
+
+<script>
+function logar() {
+    let user = document.getElementById("usuario").value;
+    let pass = document.getElementById("senha").value;
+    if (user === "ceada" && pass === "111") {
+        window.location.href = "painel.html";
+    } else {
+        document.getElementById("erro").style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
